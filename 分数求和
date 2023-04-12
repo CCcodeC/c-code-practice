@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main()
+{
+    double sum=0.0;
+    double sum1=0.0;
+    double sum2=0.0;
+    //解法1
+    // int flag=1;
+    // for(int n=1;n<=100;n++)
+    // {
+    //     sum+=flag*1.0/n;//要想保证结果是一个小数，除数和被除数至少含有一个小数
+    //     flag=-flag;
+    // }
+    //解法2
+    for(int i=1,j=2;i<=100&&j<=100;i+=2,j+=2)
+    {
+        sum+=1.0/i;
+        sum1+=1.0/j;
+        sum2=sum-sum1;
+    }
+    printf("%lf\n",sum2);
+    return 0;
+}
