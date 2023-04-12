@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<math.h>
+//素数求解的方法有很多种，下面只是其中一种方法
+int main()
+{
+	int n = 0;
+	int x = 0;
+	scanf("%d", &n);
+	for ( x = 2; x <= sqrt(n); x++)//sart--用来开平方的数学库函数--使用时需要引用头文件#include<math.h>
+	{
+		if (0 != n % x)
+		{
+			printf("yes");
+		}
+		else
+		{
+			printf("no");
+		}
+	}
+	if ( x > sqrt(n))
+	{
+		printf("yes");
+	}
+	return 0;
+}
