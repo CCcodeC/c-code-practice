@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main()
+{
+    for(int i=1;i<=9;i++)
+    {
+        for(int j=1;j<=i;j++)
+        {
+            //printf("%d*%d=%2d  ",i ,j , i*j);//%2d--右对齐--打印时直接打印成个两位数，不足两位差的那一位默认用空格补上，这样这个乘法表更美观
+            printf("%d*%d=%-2d  ",i ,j , i*j);//%-2d--左对齐--意思与上面那个差不多
+        }
+        printf("\n");//打印完一行后就换行
+    }
+    return 0;
+}
