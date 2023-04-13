@@ -1,0 +1,63 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#include<windows.h>
+void menu()
+{
+    printf("                    \n");
+    printf("   play:1  exit:0   \n");
+    printf("                    \n");
+}
+//#define RAND MAX//-生成的随机数的范围在0到RAND MAX之间
+void game()
+{
+    printf("开始游戏\n");
+    printf("请输入你想猜的数字\n");
+    int i = 0;
+    int x = 0;
+    //***
+    i = rand() % 100 + 1;//生成随机数的函数--include<stdlib.h>
+    //这是生成1到100之间的随机数
+    while (scanf("%d", &x))
+    {
+        if (i == x)
+        {
+            printf("恭喜你，猜对了\n");
+            break;
+        }
+        else if (x > i)
+            printf("猜大了,大笨蛋\n");
+        else
+            printf("猜小了,小笨蛋\n");
+    }
+    system("pause");
+    system("cls");
+}
+int main()
+{
+    //***
+    srand((unsigned int)time(NULL));//设置一个随机的起点，()里需放置一个会变的整数，使用于rand函数之前--include<stdlib.h>，未使用该函数rand的生成值都会有规律
+    //时间戳--当前计算机的时间-计算机的起始时间（1970.1.1.0：0：0）=（）秒--会变的整数
+    //时间戳--time函数--#include<time.h>
+    //NULL--空指针
+    //设置一次即可
+    int input = 0;
+    do
+    {
+        menu();
+        printf("请输入：\n");
+        scanf("%d", &input);
+        switch (input)
+        {
+        case 1:
+            game();
+            break;
+        case 0:
+            printf("退出游戏");
+            break;
+        default:
+            break;
+        }
+    } while (input);
+    return 0;
+}
