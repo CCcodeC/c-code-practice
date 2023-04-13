@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char arr[20]={0};//没加上20，就只会循环一次，还不清楚为什么
+    for(int i=0;i<3;i++)
+    {
+        scanf("%s",arr);
+        if(strcmp(arr,"cc159")==0)//两个字符串是否相等不能用==来判断,用strcmp--string compare,两个字符串相等结果就是0
+        {
+            printf("yes\n");
+            break;
+        }
+        else
+        {
+            printf("no\n");
+        }        
+    }
+    return 0;
+}
